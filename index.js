@@ -25,7 +25,7 @@ proxy.onResponse(function(ctx, callback) {
 
   ctx.onResponseEnd(function(ctx, callback) {
     let body = Buffer.concat(chunks);
-    body = body.toString().replace(/TEST/g, 'LOL');
+    body = body.toString().replace(/Cannot POST \//g, 'lolkek');
     ctx.proxyToClientResponse.write(body);
     return callback();
   })
