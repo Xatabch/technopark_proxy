@@ -6,7 +6,6 @@ var Proxy = require('./lib/proxy.js');
 var proxy = Proxy();
 
 proxy.onError(function(ctx, err, errorKind) {
-  // ctx may be null
   var url = (ctx && ctx.clientToProxyRequest) ? ctx.clientToProxyRequest.url : '';
   console.error(errorKind + ' on ' + url + ':', err);
 });
